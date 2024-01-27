@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Test_1.models;
-using Test_1.Models;
-
-namespace Test_1.DataEF
+﻿namespace Test_1.DataEF
 {
     
     public class MissingPersonEntity :DbContext

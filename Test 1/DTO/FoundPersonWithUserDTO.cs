@@ -1,6 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace Test_1.DTO
+﻿namespace Test_1.DTO
 {
     public class FoundPersonWithUserDTO
     {

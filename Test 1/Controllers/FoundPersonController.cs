@@ -1,6 +1,4 @@
-﻿using Test_1.DataEF;
-using Test_1.Models;
-using Test_1.DTO;
+﻿
 namespace Test_1.Controllers
 {
     [Route("api/[controller]")]

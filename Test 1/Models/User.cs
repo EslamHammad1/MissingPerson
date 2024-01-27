@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Test_1.Models
+﻿namespace Test_1.Models
 {
     public class User
     {
