@@ -20,6 +20,8 @@ builder.Services.AddDbContext<MissingPersonEntity>(options =>
 {
     options.UseSqlServer("Data Source =ESLAM\\SQLEXPRESS ; Initial Catalog = missingperson ; Integrated Security =True ; Trusted_Connection=True ; Encrypt = False");
 });
+builder.Services.AddIdentity<ApplicationUser , IdentityRole>().
+    AddEntityFrameworkStores<MissingPersonEntity>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

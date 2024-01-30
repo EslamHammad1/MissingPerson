@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.AspNetCore.Hosting;
+
 namespace Test_1.Controllers
 {
     [Route("api/[controller]")]
@@ -6,7 +8,7 @@ namespace Test_1.Controllers
     public class FoundPersonController : ControllerBase
     {
         private readonly MissingPersonEntity context;
-        public FoundPersonController(MissingPersonEntity context)
+        public FoundPersonController(MissingPersonEntity context )
         {
             this.context = context;
         }
@@ -17,10 +19,12 @@ namespace Test_1.Controllers
             return Ok(missList);
         }
         [HttpGet("{id:int}", Name = "GetOnefoundPrsRoute")]
-        public IActionResult GetbyID(int id)
+        public IActionResult GetbyID(int id )
         {
             var miss = context.foundPerson.Include(u=>u.User).FirstOrDefault(m => m.Id == id);
             FoundPersonWithUserDTO foDTO = new FoundPersonWithUserDTO();
+
+
             foDTO.Id = miss.Id;
             foDTO.Name = miss.Name;
             foDTO.Age = miss.Age;
@@ -29,8 +33,9 @@ namespace Test_1.Controllers
             foDTO.Address_City = miss.Address_City;
             foDTO.FoundCity = miss.FoundCity;
             foDTO.Image = miss.Image;
-            foDTO.PersonWhoFoundhim = miss.User.Name;
-            foDTO.PhonePersonWhoFoundhim = miss.User.Phone;  
+            foDTO.PersonWhoFoundhim= miss.User.Name;
+            foDTO.PhonePersonWhoFoundhim = miss.User.Phone;
+
 
             return Ok(foDTO);
         }
@@ -40,7 +45,20 @@ namespace Test_1.Controllers
             var miss = context.foundPerson.FirstOrDefault(m => m.Name == name);
             return Ok(miss);
         }
-        [HttpPost]
+        //[HttpPost]
+        //public IActionResult uploadImage(IFormFile Image)
+        //{
+        //    string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "Images");
+
+        //    string uniqueFileName = Guid.NewGuid().ToString() + "_" + Image.FileName;
+        //    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+        //    using (var fileStream = new FileStream(filePath, FileMode.Create))
+        //    {
+        //        Image.CopyTo(fileStream);
+        //        fileStream.Close();
+        //    }
+        //}
+            [HttpPost]
         public IActionResult PostMissingperson(FoundPerson missPr)
 
         {

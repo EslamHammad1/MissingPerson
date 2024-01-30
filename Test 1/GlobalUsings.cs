@@ -11,7 +11,6 @@ global using System.Diagnostics.CodeAnalysis;
 global using System.Text.Json.Serialization;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.EntityFrameworkCore.Metadata.Internal;
-global using Test_1.models;
 //global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 //global using GameZone1.Services;
 //global using GameZone1.ViewModels;
