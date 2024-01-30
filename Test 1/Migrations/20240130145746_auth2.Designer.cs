@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Test_1.DataEF;
 
@@ -11,9 +12,11 @@ using Test_1.DataEF;
 namespace Test_1.Migrations
 {
     [DbContext(typeof(MissingPersonEntity))]
-    partial class MissingPersonEntityModelSnapshot : ModelSnapshot
+    [Migration("20240130145746_auth2")]
+    partial class auth2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

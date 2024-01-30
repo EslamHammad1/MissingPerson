@@ -1,6 +1,6 @@
-﻿namespace Test_1.models
+﻿namespace Test_1.Models
 {
-    public class FoundPerson :BaseEntity
+    public class FoundPerson : BaseEntity
     {
         [Required]
         public string FoundCity { get; set; } = string.Empty;

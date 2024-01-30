@@ -1,7 +1,9 @@
-﻿namespace Test_1.DataEF
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
+namespace Test_1.DataEF
 {
-    
-    public class MissingPersonEntity :DbContext
+
+    public class MissingPersonEntity :IdentityDbContext<ApplicationUser>
     {
         public MissingPersonEntity()
         {
