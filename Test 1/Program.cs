@@ -28,7 +28,6 @@ builder.Services.AddDbContext<MissingPersonEntity>(options =>
 {
     options.UseSqlServer("Data Source =ESLAM\\SQLEXPRESS ; Initial Catalog = missingperson ; Integrated Security =True ; Trusted_Connection=True ; Encrypt = False");
 });
-<<<<<<< HEAD
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().
     AddEntityFrameworkStores<MissingPersonEntity>().AddDefaultTokenProviders(); // add AddDefaultTokenProviders for resat pass or forget
 builder.Services.AddAuthentication(options =>
@@ -64,11 +63,10 @@ builder.Services.AddSwaggerGen(swagger =>
         Title = "ASP.NET 5 Web API",
         Description = "Eslam Hammad"
     });
-=======
+
 builder.Services.AddIdentity<ApplicationUser , IdentityRole>().
     AddEntityFrameworkStores<MissingPersonEntity>();
 var app = builder.Build();
->>>>>>> 37adc52dce82ee54449ea140264574bb0ea04451
 
     // To Enable authorization using Swagger (JWT)    
     swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
