@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 
 namespace Test_1.Controllers
@@ -13,6 +14,7 @@ namespace Test_1.Controllers
             this.context = context;
         }
         [HttpGet]
+        [Authorize]
         public IActionResult GetAllMissingperson()
         {
             List<FoundPerson> missList = context.foundPerson.ToList();
@@ -94,6 +96,7 @@ namespace Test_1.Controllers
             return BadRequest(ModelState);
         }
         [HttpDelete("{id:int}")]
+        [Authorize]
         public IActionResult Delete( int id ) 
         {
             FoundPerson? oldprs = context.foundPerson.FirstOrDefault(m => m.Id == id);
