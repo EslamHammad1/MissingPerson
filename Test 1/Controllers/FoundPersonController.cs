@@ -19,7 +19,7 @@ namespace Test_1.Controllers
         [Authorize]
         public IActionResult GetAllMissingperson()
         {
-            List<FoundPerson> missList = context.foundPerson.ToList();
+            List<FoundPerson> missList = context.foundPerson.Include(u=>u.User).ToList();
             return Ok(missList);
         }
         [HttpGet("{id:int}", Name = "GetOnefoundPrsRoute")]

@@ -64,10 +64,6 @@ builder.Services.AddSwaggerGen(swagger =>
         Description = "Eslam Hammad"
     });
 
-builder.Services.AddIdentity<ApplicationUser , IdentityRole>().
-    AddEntityFrameworkStores<MissingPersonEntity>();
-var app = builder.Build();
-
     // To Enable authorization using Swagger (JWT)    
     swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
@@ -93,7 +89,6 @@ var app = builder.Build();
                     }
                 });
 });
-
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
