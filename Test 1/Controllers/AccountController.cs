@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.IdentityModel.Tokens;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using static System.Net.WebRequestMethods;
+=======
+>>>>>>> 37adc52dce82ee54449ea140264574bb0ea04451
 
 namespace Test_1.Controllers
 {
@@ -15,19 +18,32 @@ namespace Test_1.Controllers
     public class AccountController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> userManager;
+<<<<<<< HEAD
         private readonly IConfiguration config;
        public AccountController(UserManager<ApplicationUser> userManager , IConfiguration config)
         {
             this.userManager = userManager;
             this.config = config;
+=======
+        public AccountController(UserManager<ApplicationUser> userManager)
+        {
+            this.userManager = userManager;
+>>>>>>> 37adc52dce82ee54449ea140264574bb0ea04451
         }
         [HttpPost("register")]
         public async Task<IActionResult> register(UserRegisterDTO userDto)
         {
+<<<<<<< HEAD
             if (ModelState.IsValid == true)
             {
                 ApplicationUser user = new ApplicationUser();
                 user.UserName = userDto.UserName;
+=======
+            if (ModelState.IsValid)
+            {
+                ApplicationUser user = new ApplicationUser();
+                user.UserName = userDto.Name;
+>>>>>>> 37adc52dce82ee54449ea140264574bb0ea04451
                 user.Email = userDto.Email;
               IdentityResult result = await userManager.CreateAsync(user, userDto.Password);
             if (result.Succeeded) 
@@ -41,6 +57,7 @@ namespace Test_1.Controllers
             }
             return BadRequest(ModelState);
         }
+<<<<<<< HEAD
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserLoginDTO userDto)
         {
@@ -91,4 +108,9 @@ namespace Test_1.Controllers
     }
     
    
+=======
+        
+
+    }
+>>>>>>> 37adc52dce82ee54449ea140264574bb0ea04451
 }

@@ -1,5 +1,8 @@
 ﻿
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
+=======
+>>>>>>> 37adc52dce82ee54449ea140264574bb0ea04451
 using Microsoft.AspNetCore.Hosting;
 
 namespace Test_1.Controllers
